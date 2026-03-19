@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://cncp0iffis17x" path="res://ui/gameui.tscn" id="6_dwbse"]
 [ext_resource type="Texture2D" uid="uid://dvsypy3n3wgyw" path="res://textures/woods.png" id="7_pkg7o"]
 [ext_resource type="PackedScene" uid="uid://byx1tpyjif6gs" path="res://coin.tscn" id="8_gbfbk"]
+[ext_resource type="Texture2D" uid="uid://8l5ffao4u516" path="res://textures/death.png" id="8_ioo17"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_aqk2v"]
 texture = ExtResource("2_tlwt5")
@@ -217,7 +218,6 @@ scale = Vector2(5, 5)
 position = Vector2(-222.06895, 30.344826)
 
 [node name="Node2D" type="Node2D" parent="." unique_id=559528821]
-visible = false
 
 [node name="ColorRect" type="ColorRect" parent="Node2D" unique_id=1166680958]
 top_level = true
@@ -226,6 +226,12 @@ offset_top = -721.3793
 offset_right = 947.5861
 offset_bottom = 572.4137
 color = Color(0.34064347, 0.34064347, 0.34064347, 0.95100003)
+
+[node name="Sprite2D" type="Sprite2D" parent="Node2D" unique_id=380197575]
+top_level = true
+position = Vector2(0, -150.00003)
+scale = Vector2(3.625, 3.6624997)
+texture = ExtResource("8_ioo17")
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer2" to="." method="_on_timer_2_timeout"]

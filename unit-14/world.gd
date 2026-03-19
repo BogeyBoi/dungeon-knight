@@ -19,6 +19,7 @@ func _process(delta: float) -> void:
 	if get_tree().get_first_node_in_group("player").health == 0:
 		get_node("Node2D").visible = true
 		timer.paused = true
+		get_node("Node2D/Sprite2D").position = get_tree().get_first_node_in_group("player").position + (Vector2.UP * 200) 
 
 func spawnEnemy(randomPosition):
 	var enemy = enemyscene.instantiate()
