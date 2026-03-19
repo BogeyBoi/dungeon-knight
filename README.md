@@ -15,3 +15,5 @@ left click = attack
 
 
 right click = block
+
+click code, download zip, extract and run the exe for the gameplay
