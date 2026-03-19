@@ -523,7 +523,7 @@ advance_expression = "is_on_floor()"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_dw050"]
 advance_mode = 2
-advance_expression = "velocity.x > 0.2"
+advance_expression = "abs(velocity.x) > 0.2"
 
 [sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_onrkg"]
 advance_mode = 2
@@ -589,7 +589,7 @@ states/Start/position = Vector2(144.8, 84.799995)
 states/Walk/node = SubResource("AnimationNodeAnimation_hqtel")
 states/Walk/position = Vector2(625.4, 55.012802)
 transitions = ["Start", "Idle", SubResource("AnimationNodeStateMachineTransition_2hs0m"), "Idle", "Walk", SubResource("AnimationNodeStateMachineTransition_dw050"), "Walk", "Idle", SubResource("AnimationNodeStateMachineTransition_onrkg"), "Idle", "Slash", SubResource("AnimationNodeStateMachineTransition_i3pqv"), "Walk", "Slash", SubResource("AnimationNodeStateMachineTransition_hqtel"), "Slash", "Idle", SubResource("AnimationNodeStateMachineTransition_sweqy"), "Idle", "Block", SubResource("AnimationNodeStateMachineTransition_1jxqw"), "Walk", "Block", SubResource("AnimationNodeStateMachineTransition_b26j0"), "Block", "Idle", SubResource("AnimationNodeStateMachineTransition_n7ghd"), "Idle", "Death", SubResource("AnimationNodeStateMachineTransition_nvl01"), "Walk", "Death", SubResource("AnimationNodeStateMachineTransition_ivps1"), "Idle", "Climb", SubResource("AnimationNodeStateMachineTransition_urp6f"), "Climb", "Idle", SubResource("AnimationNodeStateMachineTransition_bwjto"), "Walk", "Climb", SubResource("AnimationNodeStateMachineTransition_606se")]
-graph_offset = Vector2(-60, -53)
+graph_offset = Vector2(-372, -57)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2hs0m"]
 size = Vector2(20, 52)
@@ -606,6 +606,8 @@ size = Vector2(17.200003, 30.8)
 [node name="player" type="CharacterBody2D" unique_id=1041053521]
 scale = Vector2(2.5, 2.5)
 collision_mask = 16
+floor_max_angle = 3.1415927
+floor_snap_length = 0.0
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1374832833]
@@ -649,6 +651,7 @@ position = Vector2(2, -26)
 shape = SubResource("RectangleShape2D_i3pqv")
 
 [node name="hurtbox" type="Area2D" parent="." unique_id=496890408]
+scale = Vector2(0.8, 1)
 collision_mask = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="hurtbox" unique_id=311292868]
@@ -657,6 +660,7 @@ shape = SubResource("RectangleShape2D_hqtel")
 debug_color = Color(0.24282354, 0.6379766, 0, 0.41960785)
 
 [node name="climb" type="Area2D" parent="." unique_id=100633876]
+scale = Vector2(0.8, 1)
 collision_layer = 256
 collision_mask = 128
 

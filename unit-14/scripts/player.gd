@@ -47,6 +47,7 @@ func _physics_process(delta: float) -> void:
 			velocity += get_gravity() * delta
 	if health == 0:
 		gameOver()
+	print(is_on_wall())
 	move_and_slide()
 	
 func gameOver():
