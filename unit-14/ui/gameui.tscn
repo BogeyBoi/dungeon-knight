@@ -1,0 +1,111 @@
+[gd_scene format=3 uid="uid://cncp0iffis17x"]
+
+[ext_resource type="Script" uid="uid://dxuhrdj6x7lkg" path="res://ui/gameui.gd" id="1_bfc6b"]
+[ext_resource type="Texture2D" uid="uid://usgasa3nyt0m" path="res://ui/heart_multiple.png" id="1_hlqk7"]
+[ext_resource type="Texture2D" uid="uid://de8mia2xflxox" path="res://ui/heart_multiplefixed.png" id="2_targs"]
+[ext_resource type="Texture2D" uid="uid://b8tw0iw14548l" path="res://ui/coin big.png" id="4_targs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e22hv"]
+atlas = ExtResource("2_targs")
+region = Rect2(128, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_bfc6b"]
+atlas = ExtResource("1_hlqk7")
+region = Rect2(96, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_targs"]
+atlas = ExtResource("1_hlqk7")
+region = Rect2(64, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ki7dx"]
+atlas = ExtResource("1_hlqk7")
+region = Rect2(32, 0, 128, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_243bm"]
+atlas = ExtResource("1_hlqk7")
+region = Rect2(0, 0, 128, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4vxqq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e22hv")
+}],
+"loop": true,
+"name": &"0",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_bfc6b")
+}],
+"loop": true,
+"name": &"1",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_targs")
+}],
+"loop": true,
+"name": &"2",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ki7dx")
+}],
+"loop": true,
+"name": &"3",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_243bm")
+}],
+"loop": true,
+"name": &"4",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_targs"]
+
+[node name="ui" type="Control" unique_id=255425519]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_bfc6b")
+
+[node name="health" type="Node2D" parent="." unique_id=71155561]
+scale = Vector2(0.5, 0.5)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="health" unique_id=1425356855]
+position = Vector2(81, 81)
+scale = Vector2(5, 5)
+sprite_frames = SubResource("SpriteFrames_4vxqq")
+animation = &"0"
+
+[node name="coins" type="Node2D" parent="." unique_id=288662949]
+scale = Vector2(3, 3)
+
+[node name="Sprite2D" type="Sprite2D" parent="coins" unique_id=1225548117]
+position = Vector2(241.99998, 12.666666)
+texture = ExtResource("4_targs")
+
+[node name="Amount" type="Label" parent="coins" unique_id=1911335466]
+offset_left = 272.0
+offset_right = 312.0
+offset_bottom = 23.000002
+text = "0"
+label_settings = SubResource("LabelSettings_targs")
+
+[node name="Label2" type="Label" parent="coins" unique_id=834823197]
+offset_left = 259.0
+offset_top = -1.333334
+offset_right = 299.0
+offset_bottom = 47.666664
+text = ":
+"
